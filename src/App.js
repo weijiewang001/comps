@@ -1,30 +1,31 @@
-import Button from "./Button";
-import { GoBell,GoBlocked,GoCalendar } from 'react-icons/go'
+import Accordion from "./components/Accordion";
+import Button from "./components/Button";
+import { GoBell, GoBlocked, GoCalendar } from 'react-icons/go'
 
 function App() {
+  const items = [
+    {
+      id: "asdfasdf",
+      label: "Can I use React on a project?",
+      content: "You can use React on any project you want.You can use React on any project you wantYou can use React on any project you wantYou can use React on any project you wantYou can use React on any project you want"
+    },
+    {
+      id: "jhgf",
+      label: "Can I use Javascript  on a project?",
+      content: "You can use React on any project youYou can use React on any project youYou can use React on any project youYou can use React on any project youYou can use React on any project you"
+    },
+    {
+      id: "werq",
+      label: "Can I use React on a project?",
+      content: "You can use React on any project you want.You can use React on any project you wantYou can use React on any project you wantYou can use React on any project you wantYou can use React on any project you want"
+    }
+  ]
 
-  const handleClick =()=>{
-    console.log('Click!!');
-  }
   return (
     <div>
-      <div>
-        <Button primary rounded outline className="mb-5" onClick={handleClick}><GoBell/>click me</Button>
-      </div>
-      <div>
-        <Button secondary outline rounded onClick={handleClick} onMouseEnter={handleClick}><GoBlocked/>buy now</Button>
-      </div>
-      <div>
-        <Button primary onMouseLeave={handleClick}><GoCalendar/>hide me</Button>
-      </div>
-      <div>
-        <Button secondary>don don</Button>
-      </div>
-      <div>
-        <Button rounded>god god</Button>
-      </div>
+      <Accordion items={items} />
     </div>
-  );
+  )
 }
 
 export default App;
