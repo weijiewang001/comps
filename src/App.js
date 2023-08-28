@@ -1,31 +1,26 @@
-import Accordion from "./components/Accordion";
-import Button from "./components/Button";
-import { GoBell, GoBlocked, GoCalendar } from 'react-icons/go'
+import { useState } from "react";
+import Dropdown from "./components/Dropdown";
 
 function App() {
-  const items = [
-    {
-      id: "asdfasdf",
-      label: "Can I use React on a project?",
-      content: "You can use React on any project you want.You can use React on any project you wantYou can use React on any project you wantYou can use React on any project you wantYou can use React on any project you want"
-    },
-    {
-      id: "jhgf",
-      label: "Can I use Javascript  on a project?",
-      content: "You can use React on any project youYou can use React on any project youYou can use React on any project youYou can use React on any project youYou can use React on any project you"
-    },
-    {
-      id: "werq",
-      label: "Can I use React on a project?",
-      content: "You can use React on any project you want.You can use React on any project you wantYou can use React on any project you wantYou can use React on any project you wantYou can use React on any project you want"
-    }
-  ]
+  const [selection, setSelection] = useState(null);
+
+  const handleSelect = (option) => {
+    setSelection(option);
+  };
+  const options = [
+    { label: 'Red', value: 'red' },
+    { label: 'Green', value: 'green' },
+    { label: 'Blue', value: 'blue' },
+  ];
 
   return (
-    <div>
-      <Accordion items={items} />
+    <div className="flex">
+      <Dropdown options={options} value={selection} onChange={handleSelect} />
+      <Dropdown options={options} value={selection} onChange={handleSelect} />
+
     </div>
   )
+
 }
 
 export default App;
